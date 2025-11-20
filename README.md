@@ -15,6 +15,26 @@ A web scraping application that monitors product prices from e-commerce websites
 
 ## Tech Stack
 
+**Frontend:**
+- React + Vite - Modern frontend framework
+- Material-UI - Component library
+- Recharts - Data visualization
+- Axios - HTTP client
+
+## Screenshots
+
+### Product List
+![Product List](screenshots/products-list.png)
+
+### Statistics Dashboard
+![Statistics](screenshots/statistics.png)
+
+### Price Alerts
+![Price Alerts](screenshots/price-alerts.png)
+
+### API Response
+![API Response](screenshots/api-response.png)
+
 **Backend:**
 - FastAPI - Modern Python web framework
 - SQLite - Lightweight database
@@ -31,7 +51,16 @@ price-tracker/
 ├── scheduler.py        # Automated scraping scheduler
 ├── logger.py           # Logging configuration
 ├── prices.db           # SQLite database (generated)
-└── scraper.log         # Application logs (generated)
+├── scraper.log         # Application logs (generated)
+├── screenshots/        # Dashboard screenshots
+└── frontend/           # React frontend application
+    ├── src/
+    │   ├── App.jsx
+    │   └── components/
+    │       ├── ProductList.jsx
+    │       ├── Statistics.jsx
+    │       └── PriceAlerts.jsx
+    └── package.json
 ```
 
 ## Installation
@@ -50,7 +79,7 @@ source venv/bin/activate
 
 3. Install dependencies:
 ```bash
-pip install fastapi uvicorn beautifulsoup4 requests lxml apscheduler
+pip install -r requirements.txt
 ```
 
 4. Initialize database:
@@ -76,6 +105,15 @@ API will be available at: `http://localhost:8000`
 ```bash
 python scheduler.py
 ```
+
+### Start Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend will be available at: `http://localhost:5173`
 
 Scraper will run every 24 hours automatically.
 
